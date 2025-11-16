@@ -108,7 +108,16 @@
          resultado.innerText = a || "0";
       });
 
-      cambioDeSigno
+      cambioDeSigno.addEventListener("click", function() {        
+         if (a !== "" && a !== "0") {
+            if (a.startsWith("-")) {
+                  a = a.substring(1);
+            } else {
+                  a = "-" + a;
+            }
+            resultado.innerText = a;
+         }
+      });
 
       suma.addEventListener("click", function() {         
          signo = "+";
