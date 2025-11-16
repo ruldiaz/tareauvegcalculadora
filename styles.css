@@ -1,0 +1,76 @@
+body {
+   background-color: #E0E0E2;
+   margin: 0;
+   padding: 0;
+   color: #416788;
+}
+
+h1 {
+   text-align: center;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.calculadora-marco {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3px;
+   border: 1px solid #7389AE;
+   box-shadow: 15px 15px 12px;
+   max-width: 225px;
+   margin-top: 20px;
+   padding: 10px 10px;
+}
+
+.pantalla {
+   display: grid;
+   border: 1px solid #7389AE;
+   text-align: right;
+   min-height: 80px;
+   min-width: 225px;
+   max-width: 225px;
+   font-weight: bold;
+}
+
+#resultado {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   padding-right: 25px;
+   font-size: x-large;
+}
+
+#operacion {
+   font-size:larger;
+   margin-top: 5px;
+   margin-bottom: 0;
+   padding-right: 25px;
+}
+
+#botones-numeros {
+   background-color: #B5BAD0;
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 225px;
+   gap: 2px;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+#botones-numeros button {
+   display: flex;
+   justify-content: center;
+   padding: 15px 25px;
+   max-width: 15px;  
+}
+
+footer {
+   margin-top: 100px;
+   text-align: center;
+}
