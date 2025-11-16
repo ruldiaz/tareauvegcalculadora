@@ -53,6 +53,12 @@ main {
    padding-right: 25px;
 }
 
+#resultado, #operacion {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
 #botones-numeros {
    background-color: #B5BAD0;
    display: flex;
@@ -67,7 +73,8 @@ main {
    display: flex;
    justify-content: center;
    padding: 15px 25px;
-   max-width: 15px;  
+   max-width: 15px;
+   box-shadow: 2px 2px 12px;
 }
 
 #igual {
