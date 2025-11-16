@@ -38,6 +38,7 @@ main {
    min-width: 100%;
    max-width: 100%;
    font-weight: bold;
+   box-shadow: 2px 2px 5px;
 }
 
 #resultado {
@@ -75,6 +76,7 @@ main {
    padding: 15px 0;
    max-width: none;
    box-sizing: border-box;
+   box-shadow: 2px 2px 5px;
 }
 
 #igual {
