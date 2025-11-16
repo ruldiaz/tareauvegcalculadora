@@ -45,11 +45,16 @@
 
      
       let resultado = document.getElementById("resultado");
+      resultado.innerText = "0";
+
       let operacion = document.getElementById("operacion");
       let signo = "";
 
       let a = "";
       let b = "";
+      let ultimoValor = "";
+      let ultimoSigno = "";
+
       
       const porcentaje = document.getElementById("porcentaje");
       const c = document.getElementById("c");
@@ -121,40 +126,58 @@
 
       suma.addEventListener("click", function() {         
          signo = "+";
-         b = a;
+         b = a === "" ? resultado.innerText : a;
          operacion.innerText = b + " + ";
          a = "";
       });
 
       resta.addEventListener("click", function() {
          signo = "-";
-         b = a;
+         b = a === "" ? resultado.innerText : a;
          operacion.innerText = b + " - ";
          a = "";
       });
 
       multiplicacion.addEventListener("click", function() {
          signo = "*";
-         b = a;
+         b = a === "" ? resultado.innerText : a;
          operacion.innerText = b + " * ";
          a = "";
       });
 
       division.addEventListener("click", function() {
          signo = "/";
-         b = a;
+         b = a === "" ? resultado.innerText : a;
          operacion.innerText = b + " / ";
          a = "";
       });
 
       porcentaje.addEventListener("click", function() {
          signo = "%";
-         b = a;
+         b = a === "" ? resultado.innerText : a;
          operacion.innerText = b + " % ";
          a = "";
       });
 
       igual.addEventListener("click", function() {
+         if (a === "") {
+            if (ultimoValor !== "" && ultimoSigno !== "") {
+               operacion.innerText = resultado.innerText + " " + ultimoSigno + " " + ultimoValor + " = ";
+               if (ultimoSigno === "+") {
+                  resultado.innerText = sumar(Number(resultado.innerText), Number(ultimoValor));
+               } else if (ultimoSigno === "-") {
+                  resultado.innerText = restar(Number(resultado.innerText), Number(ultimoValor));
+               } else if (ultimoSigno === "*") {
+                  resultado.innerText = multiplicar(Number(resultado.innerText), Number(ultimoValor));
+               } else if (ultimoSigno === "/") {
+                  resultado.innerText = dividir(Number(resultado.innerText), Number(ultimoValor));
+               } else if (ultimoSigno === "%") {
+                  resultado.innerText = calcularPorcentaje(Number(resultado.innerText), Number(ultimoValor));
+               }
+            }
+            return;
+         }
+
          operacion.innerText = b + " " + signo + " " + resultado.innerText + " = ";
          if(signo === "+"){
             resultado.innerText = sumar(Number(b), Number(resultado.innerText));
@@ -167,9 +190,12 @@
          } else if (signo === "%") {
             resultado.innerText = calcularPorcentaje(Number(b), Number(resultado.innerText));
          }
+         ultimoValor = a;
+         ultimoSigno = signo;
          a = "";
       });
 
+      // Funciones para operaciones aritméticas
       function sumar(a, b) {
          return a + b;
       };

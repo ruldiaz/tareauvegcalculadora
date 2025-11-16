@@ -70,6 +70,11 @@ main {
    max-width: 15px;  
 }
 
+#igual {
+   background-color: #416788;
+   color: #E0E0E2;
+}
+
 footer {
    margin-top: 100px;
    text-align: center;
