@@ -90,7 +90,19 @@
       // Bucle for clásico para recorrer todos los números y asignarles el evento click
       for(let i = 0 ; i < 10 ; i++) {
          numeros[i].addEventListener("click", function() {
-            a += ""+i;
+            if (a === "0") {
+               if (i === 0) {
+                  a = "0"
+               } else {
+                  a = ""+i;
+               }
+            }
+            else if (a === "") {
+              a = ""+i;
+            }
+            else {
+              a += ""+i;
+      }
             resultado.innerText = a;
          });
       };
